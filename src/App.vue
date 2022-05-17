@@ -2,7 +2,9 @@
   <nav>
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link> |
-    <router-link to="/databinding">DataBinding</router-link>
+    <router-link to="/databinding">DataBinding</router-link> |
+    <router-link to="/databinding2">DataBinding2</router-link> |
+    <router-link to="/nested">nested</router-link>
   </nav>
   <router-view/>
 </template>
