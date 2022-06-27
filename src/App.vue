@@ -1,14 +1,25 @@
 <template>
   <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link> |
-    <router-link to="/databinding">DataBinding</router-link> |
-    <router-link to="/databinding2">DataBinding2</router-link> |
-    <router-link to="/nested">Nested</router-link> |
-    <router-link to="/calculator">Calculator</router-link> |
-    <router-link to="/composition">Composition</router-link> |
-    <router-link to="/composition2">Composition2</router-link> |
-    <router-link to="/compositionProvide">CompositionProvide</router-link> |
+    <router-link to="/">Home</router-link>
+    |
+    <router-link to="/about">About</router-link>
+    |
+    <router-link to="/databinding">DataBinding</router-link>
+    |
+    <router-link to="/databinding2">DataBinding2</router-link>
+    |
+    <router-link to="/nested">Nested</router-link>
+    |
+    <router-link to="/calculator">Calculator</router-link>
+    |
+    <router-link to="/composition">Composition</router-link>
+    |
+    <router-link to="/composition2">Composition2</router-link>
+    |
+    <router-link to="/compositionProvide">CompositionProvide</router-link>
+    |
+    <router-link to="/quickStart">QuickStart</router-link>
+    |
   </nav>
   <router-view/>
 </template>
@@ -35,7 +46,8 @@ nav a.router-link-exact-active {
   color: #42b983;
 }
 </style>
-<script>export default {
+<script>
+export default {
   components: {}
 }
 </script>

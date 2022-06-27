@@ -1,5 +1,13 @@
 <template>
   <h1>Hello, {{ title }}</h1>
+  <div>
+    <input type="text" v-model="num"/>
+    <br/>
+    1부터 입력된 수까지의 합(computed) : <span>{{ sum }}</span>
+    <br />
+    1부터 입력된 수까지의 합(method) : <span>{{ sum_method() }}</span>
+  </div>
+
   <div>{{ htmlString }}</div>
   <div v-html="htmlString"></div>
   <input type="text" v-model="valueModel"/>
@@ -57,13 +65,18 @@
     </tr>
     </thead>
     <tbody>
-    <tr :key="i" v-for="(product, i) in productList">
-      <td>{{ i + 1 }}</td>
-      <td>{{ product.product_name }}</td>
-      <td>{{ product.price }}</td>
-      <td>{{ product.category }}</td>
-      <td>{{ product.delivery_price }}</td>
-    </tr>
+    <template :key="i" v-for="(product, i) in productList">
+      <tr>
+        <td>{{ i + 1 }}</td>
+        <td>{{ product.product_name }}</td>
+        <td>{{ product.price }}</td>
+        <td>{{ product.category }}</td>
+        <td>{{ product.delivery_price }}</td>
+      </tr>
+      <tr class="divider" v-if="i % 2 === 1">
+        <td colspan="5"></td>
+      </tr>
+    </template>
     </tbody>
   </table>
   <br><br>
@@ -100,6 +113,7 @@ export default {
   data() {
     return {
       title: 'world',
+      num: 0,
       htmlString: '<p style="color:Red;">This is a red string.</p>',
       valueModel: 'South Korea',
       numberModel: 3,
@@ -120,10 +134,10 @@ export default {
         fontSize: '13px'
       },
       productList: [
-        {"product_name": "기계식키보드", "price": 25000, "category": "노트북/태블릿", "delivery_price": 5000},
-        {"product_name": "무선마우스", "price": 35000, "category": "노트북/태블릿", "delivery_price": 5000},
+        {"product_name": "기계식키보드", "price": 25000, "category": "악세서리", "delivery_price": 5000},
+        {"product_name": "무선마우스", "price": 35000, "category": "악세서리", "delivery_price": 5000},
         {"product_name": "아이패드", "price": 45000, "category": "노트북/태블릿", "delivery_price": 5000},
-        {"product_name": "태블릿거치대", "price": 55000, "category": "노트북/태블릿", "delivery_price": 5000}
+        {"product_name": "태블릿거치대", "price": 55000, "category": "악세서리", "delivery_price": 5000}
       ],
       type: 'A',
       counter: 0,
@@ -136,6 +150,12 @@ export default {
   computed: {
     fullName() {
       return this.firstName + ' ' + this.lastName;
+    },
+    sum() {
+      console.log(Date.now());
+      let n = Number(this.num);
+      if (Number.isNaN(n) || n < 1) return 0;
+      return ((1 + n) * n) / 2;
     }
   },
   watch: {
@@ -157,6 +177,12 @@ export default {
   methods: {
     increaseCounter() {
       this.counter = this.counter + 1;
+    },
+    sum_method() {
+      console.log(Date.now());
+      let n = Number(this.num);
+      if (Number.isNaN(n) || n < 1) return 0;
+      return ((1 + n) * n) / 2;
     },
     setCount(counter) {
       this.counter = counter;
@@ -202,5 +228,10 @@ td, th {
   border: 1px solid #dddddd;
   text-align: left;
   padding: 8px;
+}
+
+.divider {
+  height: 2px;
+  background-color: gray;
 }
 </style>

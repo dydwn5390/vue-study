@@ -7,6 +7,7 @@ import Calculator from "@/views/CalculatorAPI";
 import CompositionAPI from "@/views/CompositionAPI";
 import CompositionAPI2 from "@/views/CompositionAPI2";
 import CompositionAPIProvide from "@/views/CompositionAPIProvide";
+import QuickStart from "@/views/quickStart/QuickStart";
 
 const routes = [
   {
@@ -56,6 +57,11 @@ const routes = [
     path: '/compositionProvide',
     name: 'compositionProvide',
     component: CompositionAPIProvide
+  },
+  {
+    path: '/quickStart',
+    name: 'quickStart',
+    component: QuickStart
   }
 
 ]
