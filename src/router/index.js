@@ -8,6 +8,7 @@ import CompositionAPI from "@/views/CompositionAPI";
 import CompositionAPI2 from "@/views/CompositionAPI2";
 import CompositionAPIProvide from "@/views/CompositionAPIProvide";
 import QuickStart from "@/views/quickStart/QuickStart";
+import SlotTest from "@/views/quickStart/SlotTest";
 
 const routes = [
   {
@@ -62,6 +63,11 @@ const routes = [
     path: '/quickStart',
     name: 'quickStart',
     component: QuickStart
+  },
+  {
+    path: '/slotTest',
+    name: 'slotTest',
+    component: SlotTest
   }
 
 ]

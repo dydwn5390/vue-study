@@ -44,8 +44,13 @@ export default {
 </script>
 
 <style scoped>
+
+* {
+  box-sizing: border-box;
+}
+
 #list {
-  width: 600px;
+  width: 100%;
   border: 1px solid black;
   border-collapse: collapse;
 }
@@ -57,6 +62,6 @@ export default {
 
 #list > thead > tr {
   color: yellow;
-  background-color: purple;
+  background-color: #757575;
 }
 </style>
